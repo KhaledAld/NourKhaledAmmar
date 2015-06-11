@@ -13,7 +13,7 @@ public class Helper
     SqlConnection Connection;
 	public Helper()
 	{
-        Connection = new SqlConnection(@"Data Source=Joseph\SQLEXPRESS;Initial Catalog=3alyamen;Integrated Security=True");
+        Connection = new SqlConnection(@"Data Source=khaled-pc\sqlexpress;Initial Catalog=3alyamen;Integrated Security=True");
 	}
     public void OpenConnection()
     {

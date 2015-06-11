@@ -23,24 +23,24 @@
     <script type="text/javascript" src="../Scripts/list.js"></script>
     <script type="text/javascript" src="../Scripts/Codepros.js"></script>
     <style type="text/css">
-            .ratingEmpty{
-            background-image: url(/MainProject%20-%20Copy/Icons/ratingStarEmpty.gif);
+            .ratingEmpty
+            {
+            background-image: url(/Icons/ratingStarEmpty.gif);
             width:18px;
             height:18px;
             }
-            
-            .ratingFilled{
-            background-image: url(/MainProject%20-%20Copy/Icons/ratingStarFilled.gif);
+            .ratingFilled
+            {
+            background-image: url(/Icons/ratingStarFilled.gif);
             width:18px;
             height:18px;
             }
-            
-            .ratingSaved{
-            background-image: url(/MainProject%20-%20Copy/Icons/ratingStarSaved.gif);
+            .ratingSaved
+            {
+            background-image: url(/Icons/ratingStarSaved.gif);
             width:18px;
             height:18px;
             }
-            
         </style>
     <title></title>
 </head>
@@ -222,9 +222,8 @@
             });
             var Marker=myMap.CreateMarker({
                 lat: Lng,
-                lng: Lat--%>
-            
-            
+                lng: Lat
+            });--%>
         })(window, window.Codepros, jQuery);
         function Addcomment() {
             if ('<%=Session["Email"]%>')
