@@ -16,12 +16,10 @@ public partial class Pages_Serilization : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        hfMarkerID.Value = Convert.ToInt32(Request.QueryString["MarkerID"]) + " ";
-        hfUserID.Value = (string)Session["UserID"];
     }
     protected void btnSubmitPost_Click(object sender, EventArgs e)
     {
-        myHelper.AddPost(tboxPostDesc.Value, 1, 18);
+     
     }
     [WebMethod]
     public static string AddPost(string Desc, int userId, int markerId)

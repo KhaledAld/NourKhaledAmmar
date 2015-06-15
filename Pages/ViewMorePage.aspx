@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ViewMorePage.aspx.cs" Inherits="Pages_KhaledTest" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ViewMorePage.aspx.cs" Inherits="Pages_ViewMorePage" %>
 <%@ Register Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <%@ Register Src="~/CustomControl/CommentControl.ascx" TagPrefix="myControl" TagName="Comments" %>
@@ -81,11 +80,13 @@
             <div  style="position:relative;width:100%;height:64%;">
                 <div id="Basic-info" style="position:absolute;top:3%;background-color:white;width:45%;height:40%;border-radius:2px;box-shadow:0px 1px 4px gray">
                     <div style="position:absolute;background-color:#67e479;width:100%;height:3%"></div>
-                            <h4 style="position:absolute;left:3%" >Basic information</h4><br /><br />
-                            <strong style="position:relative;left:3%">Description : </strong><asp:Label style="position:relative;left:3%" runat="server" ID="lblDescription" Font-Size="Small"></asp:Label><br />
+                            <div class="container-fluid">
+                            <h4 style="position:absolute;" >Basic information</h4><br /><br />
+                            <strong style="position:relative;left:3%;width:20%">Description : </strong><asp:Label style="position:relative;left:3%;width:auto" runat="server" ID="lblDescription" Font-Size="Small"></asp:Label><br />
                             <strong style="position:relative;left:3%;top:1%">Gener : </strong><asp:Label style="position:relative;left:3%;top:1%" runat="server" ID="lblGener" Font-Size="Small"></asp:Label><br />
                             <strong style="position:relative;left:3%;top:1%">Work Day : </strong><asp:Label style="position:relative;left:3%;top:1%" runat="server" ID="lblAvalabileDay" Font-Size="Small"></asp:Label><br />
                             <strong style="position:relative;left:3%;top:1%">Work Time : </strong><asp:Label style="position:relative;left:3%;top:1%" runat="server" ID="lblWorkTime" Font-Size="Small"></asp:Label>        
+                            </div>
                 </div>
                 <div id="call-info" style="position:absolute;top:3%;left:50%;background-color:white;width:50%;height:22%;border-radius:2px;box-shadow:0px 1px 4px gray">
                     <div style="position:absolute;background-color:#77a9fa;width:100%;height:5%"></div>

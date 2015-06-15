@@ -4,11 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.Services;
-using System.Web.Script.Serialization;
 using System.Data;
 
-public partial class Pages_KhaledTest : System.Web.UI.Page
+public partial class Pages_ViewMorePage : System.Web.UI.Page
 {
     MarkerHelper mHelper = new MarkerHelper();
     protected void Page_Load(object sender, EventArgs e)
@@ -21,15 +19,15 @@ public partial class Pages_KhaledTest : System.Web.UI.Page
         if (!IsPostBack)
         {
             //for show login-logout button
-            if (Session["userId"]==null)
+            if (Session["userId"] == null)
             {
-         //       lbtnLogOut.ToolTip = "logIn";
-            }    
+                //       lbtnLogOut.ToolTip = "logIn";
+            }
             //add visitor to this marker
             mHelper.UpdateVisitCounter(16);//16==>id
             //For Fill comments
-            ReviewsHelper reviews=new ReviewsHelper();
-            DataSet ds=reviews.GetAllCommentsByMarkerId(16);//16 ==> id
+            ReviewsHelper reviews = new ReviewsHelper();
+            DataSet ds = reviews.GetAllCommentsByMarkerId(16);//16 ==> id
             if (ds.Tables[0].Rows.Count > 0)// if HAve Comments
             {
                 repeterComments.DataSource = ds.Tables[0];
@@ -43,7 +41,7 @@ public partial class Pages_KhaledTest : System.Web.UI.Page
             //for Fill Advertisments
             AdvertismentHelper AdvHelper = new AdvertismentHelper();
             DataSet AdvDS = AdvHelper.GetAdvertismentViaMarkerId(16); //16 ==> id
-            if (AdvDS.Tables[0].Rows.Count>0)
+            if (AdvDS.Tables[0].Rows.Count > 0)
             {
                 repeaterAdvertisment.DataSource = AdvDS.Tables[0];
                 repeaterAdvertisment.DataBind();
@@ -96,7 +94,7 @@ public partial class Pages_KhaledTest : System.Web.UI.Page
         //    lblRate.Text = "Rating : " + average + " (" + dt.Tables[0].Rows.Count + " Vote) ";
         //}
         DataSet RateDteails = mHelper.GetRateViaMarkerId(16);//16
-        int Rate =int.Parse( RateDteails.Tables[0].Rows[0][0].ToString());
+        int Rate = int.Parse(RateDteails.Tables[0].Rows[0][0].ToString());
         int CountRate = int.Parse(RateDteails.Tables[0].Rows[0][1].ToString());
         if (CountRate != 0)
         {
@@ -117,19 +115,19 @@ public partial class Pages_KhaledTest : System.Web.UI.Page
         myReview.MARKER_ID = 16;//16==>id
         myReview.DESCRIPTION = tboxComment.Value;
         myReview.EMAIL = tboxEmail.Value;
-        string Result=reviewHelper.InsertNewReview(myReview);
-        if (Result=="Done")
+        string Result = reviewHelper.InsertNewReview(myReview);
+        if (Result == "Done")
         {
             //to re-fill repeter in new comment
             DataSet ds = reviewHelper.GetAllCommentsByMarkerId(16);//16 ==> id
             repeterComments.DataSource = ds.Tables[0];
-            repeterComments.DataBind();    
+            repeterComments.DataBind();
         }
         else
-            ClientScript.RegisterStartupScript(GetType(), "hwa", "alert('" + Result + "');", true);   
+            ClientScript.RegisterStartupScript(GetType(), "hwa", "alert('" + Result + "');", true);
     }
     protected void tnLogOut_Click(object sender, EventArgs e)
     {
-        Response.Redirect("dsa");
+        Response.Redirect("google.com");
     }
 }
